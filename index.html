@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UK Intranet Demo — SharePoint Concepts</title>
+<link rel="stylesheet" href="src/styles.css">
+</head>
+<body>
+<header>
+  <h1>UK Intranet — Demo</h1>
+  <p>SharePoint Online concepts demo: pages, lists, libraries, metadata and permissions. Personal learning project — not a live tenant.</p>
+  <nav>
+    <button data-tab="home" class="active">Home</button>
+    <button data-tab="news">News List</button>
+    <button data-tab="docs">Document Library</button>
+    <button data-tab="permissions">Permissions</button>
+    <button data-tab="audit">Content Audit</button>
+  </nav>
+</header>
+<main>
+  <section id="tab-home" class="tab active">
+    <h2>Home page — built from web-part style sections</h2>
+    <div class="grid">
+      <div class="card"><h3>Hero</h3><p>Welcome to the UK Intranet. Find news, documents and team sites in one place.</p></div>
+      <div class="card"><h3>Quick Links</h3><ul><li>HR Policies</li><li>IT Help</li><li>Learning Hub</li></ul></div>
+      <div class="card"><h3>Upcoming</h3><ul id="home-events"></ul></div>
+    </div>
+    <h3>Latest news</h3>
+    <ul id="home-news"></ul>
+  </section>
+
+  <section id="tab-news" class="tab">
+    <h2>News list — with metadata tags</h2>
+    <label>Filter by tag: <select id="news-filter"><option value="">All</option></select></label>
+    <ul id="news-list"></ul>
+    <h3>Add a news item (demo only)</h3>
+    <form id="news-form">
+      <input id="news-title" placeholder="Title" required>
+      <input id="news-tag" placeholder="Tag, e.g. HR">
+      <button type="submit">Add</button>
+    </form>
+  </section>
+
+  <section id="tab-docs" class="tab">
+    <h2>Document library — with metadata and search</h2>
+    <input id="doc-search" placeholder="Search documents...">
+    <ul id="doc-list"></ul>
+    <p><small>Upload is simulated in-browser for this demo. Nothing is sent to a server.</small></p>
+  </section>
+
+  <section id="tab-permissions" class="tab">
+    <h2>Permissions — Owners, Members, Visitors</h2>
+    <table id="perm-table"><thead><tr><th>Site area</th><th>Owners</th><th>Members</th><th>Visitors</th></tr></thead><tbody></tbody></table>
+  </section>
+
+  <section id="tab-audit" class="tab">
+    <h2>Content audit — current / needs review / out of date</h2>
+    <ul id="audit-list"></ul>
+  </section>
+</main>
+<footer><p>Demo project for learning SharePoint Online intranet concepts.</p></footer>
+<script src="src/app.js"></script>
+</body>
+</html>
